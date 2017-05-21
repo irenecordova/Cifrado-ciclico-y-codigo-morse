@@ -13,7 +13,7 @@ int cifradoCiclico(char cadena[],  int llave)
                 caracter=caracter;
           else if isspace(caracter)
                 caracter=caracter;
-          else if  (caracter == 'Z')
+          else if  (caracter=='Z' || caracter=='z' || caracter=='Y' || caracter=='y' || caracter=='X' || caracter=='x' )
                 caracter=caracter-26+llave;
           else
                 caracter=caracter+llave;
@@ -24,7 +24,7 @@ int cifradoCiclico(char cadena[],  int llave)
 
 void main()
 {
-  char cadena[]= "ZOILA";
+  char cadena[]= "xOILA";
   cifradoCiclico(cadena, 3);
 }
 
