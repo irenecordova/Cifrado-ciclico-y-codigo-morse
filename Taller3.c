@@ -14,9 +14,9 @@ int cifradoCiclico(char cadena[],  int llave)
           else if isspace(caracter)
                 caracter=caracter;
           else if  (caracter=='Z' || caracter=='z' || caracter=='Y' || caracter=='y' || caracter=='X' || caracter=='x' )
-                caracter=caracter-26+llave;
+                caracter=caracter-26+(int)llave;
           else
-                caracter=caracter+llave;
+                caracter=caracter+(int)llave;
           printf("%c",caracter);
         }
 }
@@ -24,8 +24,15 @@ int cifradoCiclico(char cadena[],  int llave)
 
 void main()
 {
-  char cadena[]= "xOILA";
-  cifradoCiclico(cadena, 3);
+	char mensaje[50];
+	int llave;
+	puts("CIFRADO CÍCLICO");
+  	printf("Ingrese mensaje a cifrar: ");
+	scanf("%s",mensaje);
+	printf("Ingrese la llave númerica: ");
+	scanf("%d",llave);
+	printf("Mensaje cifrado: ");
+	cifradoCiclico(mensaje, llave);
 }
 
 
