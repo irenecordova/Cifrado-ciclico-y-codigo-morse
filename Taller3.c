@@ -20,6 +20,18 @@ int cifradoCiclico(char cadena[],  int llave)
         }
 }
 
+int cifradoClaveMorse(char arreglo[], char cadena[])
+{
+	for (int i=0; i<strlen(cadena); i++)
+	{
+	  char caracter=cadena[i];
+	  if (ispunt(caracter))
+		caracter=caracter;
+	  else
+		caracter=arreglo[caracter];	
+	  printf("%s ",caracter);
+}
+
 
 int main(int argc, char *argv[])
 {
