@@ -25,9 +25,11 @@ int cifradoClaveMorse(char arreglo[], char cadena[])
 	for (int i=0; i<strlen(cadena); i++)
 	{
 	  char caracter=cadena[i];
-	  if (ispunt(caracter))
+	  if ispunt(caracter)
 		caracter=caracter;
-	  else
+	  else if isspace(caracter)
+		caracter="/";
+      	  else
 		caracter=arreglo[caracter];	
 	  printf("%s ",caracter);
 }
@@ -35,6 +37,34 @@ int cifradoClaveMorse(char arreglo[], char cadena[])
 
 int main(int argc, char *argv[])
 {
+	char lista[100][100]={};
+	lista[65]=".-";
+	lista[66]="-...";
+	lista[67]="-.-.";
+  	lista[68]="-..";
+  	lista[69]=".";
+  	lista[70]="..-.";
+  	lista[71]="--.";
+  	lista[72]="....";
+  	lista[73]="..";
+  	lista[74]=".---";
+  	lista[75]="-.-";
+  	lista[76]=".-..";
+  	lista[77]="--";
+  	lista[78]="-.";
+  	lista[79]="---";
+  	lista[80]=".--.";
+  	lista[81]="--.-";
+  	lista[82]=".-.";
+  	lista[83]="...";
+  	lista[84]="-";
+  	lista[85]="..-";
+  	lista[86]="...-";
+  	lista[87]=".--";
+  	lista[88]="-..-";
+  	lista[89]="-.--";
+  	lista[90]="--..";
+
 	if (argc==3)
 	{
 		puts("CIFRADO CÍCLICO");   	
