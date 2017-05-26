@@ -31,6 +31,11 @@ int main(int argc, char *argv[])
 		printf("\n");
 		return 0;
 	}
+	else if (argc<3 && argc>1)
+	{
+		puts("Se necesita más parametros.");
+		return 0;
+	}
 	else
 	{	
 		char mensaje[1024];
