@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int cifradoCiclico(char cadena[],  int llave)
 {
@@ -15,27 +16,33 @@ int cifradoCiclico(char cadena[],  int llave)
                	caracter=caracter-(26*(llave/26))+llave;
           else
                 caracter=caracter+llave;
-          printf("%c",caracter);
+          printf("%c", caracter);
         }
 }
 
 
-int main()
+int main(int argc, char *argv[])
 {
-	char mensaje[1024];
-	int llave;
-	puts("CIFRADO CÍCLICO");
-  	printf("Ingrese mensaje a cifrar: ");
-	fgets(mensaje, 1024, stdin);
-	printf("Ingrese la llave númerica: ");
-        scanf("%d",&llave);
-//	while (isalpha(llave)==1)
-//	{
-//	   printf("Ingrese sólo números: ");
-//         scanf("%d",&llave);
-//	}
-	printf("Mensaje cifrado: ");
-	cifradoCiclico(mensaje, llave);
-	printf("\n");
-	return 0; 
+	if (argc==3)
+	{
+		puts("CIFRADO CÍCLICO");   	
+		printf("Mensaje cifrado: ");
+	   	cifradoCiclico(argv[2], atoi(argv[1]));
+		printf("\n");
+		return 0;
+	}
+	else
+	{	
+		char mensaje[1024];
+		int llave;
+		puts("CIFRADO CÍCLICO");
+  		printf("Ingrese mensaje a cifrar: ");
+		fgets(mensaje, 1024, stdin);
+		printf("Ingrese la llave númerica: ");
+        	scanf("%d",&llave);
+		printf("Mensaje cifrado: ");
+		cifradoCiclico(mensaje, llave);
+		printf("\n");
+		return 0;
+	} 
 }
