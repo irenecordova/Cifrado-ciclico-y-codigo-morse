@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
 		printf("\n");
 		return 0;
 	}
-	else if (argc<3 && argc>1)
+	else if (argc==2 || argc>3)
 	{
-		puts("Se necesita más parametros.");
+		puts("Debe ingresar 2 parámetros.");
 		return 0;
 	}
 	else
