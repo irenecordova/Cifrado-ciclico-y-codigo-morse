@@ -16,8 +16,8 @@ int cifradoCiclico(char cadena[],  int llave)
           if  (ispunct(caracter) || isspace(caracter))
                 caracter=caracter;
           else if  (((caracter+llave) > 90 && (caracter+llave) < 97 ) || ((caracter+llave) > 122))
-               	caracter=caracter-(26*(llave/26))+llave;
-          else
+		caracter=caracter+llave-26*((llave/26)+1);
+	 else
                 caracter=caracter+llave;
     	 printf("%c", caracter);
         }
@@ -35,7 +35,7 @@ int cifradoClaveMorse(char cadena[], int llave)
       	  else
 		{
 		  caracter=toupper(cadena[i]);
-		  printf("%s ",lista[caracter-65+llave-(26*(llave/26))]);
+		  printf("%s ",lista[caracter-65+llave-(26*((llave/26)+1))]);
 		}		  
 	}
 }
